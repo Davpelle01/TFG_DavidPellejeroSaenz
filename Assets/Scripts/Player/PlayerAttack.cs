@@ -28,6 +28,15 @@ public class PlayerAttack : MonoBehaviour
         {
             if (collision.CompareTag("Enemy") || collision.CompareTag("BigBullet"))
             {
+                if (collision.CompareTag("BigBullet"))
+                {
+                    gameObject.SendMessageUpwards("AddPoints", 100);// Puntos por ejecutar un parry
+                }
+                else
+                {
+                    gameObject.SendMessageUpwards("AddPoints", 25); // Puntos por eliminar un enemigo un parry
+                }
+                
                 collision.SendMessageUpwards("AddDamage");
             }
         }

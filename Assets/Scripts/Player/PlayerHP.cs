@@ -7,6 +7,7 @@ public class PlayerHP : MonoBehaviour
 {
     public int totalHealth = 3;
     public RectTransform healthUI;
+    public GameObject damageSound;
 
     //Game Over
     public RectTransform gameOverMenu;
@@ -18,7 +19,7 @@ public class PlayerHP : MonoBehaviour
     private Animator _animator;
     private PlayerController _playerController;
     private GameObject _soundtrack;
-    private GameObject _menuSoundtrack;
+    
 
     private void Awake()
     {
@@ -26,7 +27,8 @@ public class PlayerHP : MonoBehaviour
         _animator = GetComponent<Animator>();
         _playerController = GetComponent<PlayerController>();
         _soundtrack = GameObject.Find("SoundTrack");
-        _menuSoundtrack = GameObject.Find("MenuSoundTrack");
+        
+
     }
     // Start is called before the first frame update
     void Start()
@@ -64,11 +66,16 @@ public class PlayerHP : MonoBehaviour
 
     private IEnumerator HealthFeedback()
     {
+        damageSound.SetActive(true);
         _spriteRenderer.color = Color.red;
 
         yield return new WaitForSeconds(0.1f);
 
         _spriteRenderer.color = Color.white;
+
+        yield return new WaitForSeconds(0.5f);
+
+        damageSound.SetActive(false);
     }
     private void OnEnable()
     {
@@ -82,7 +89,7 @@ public class PlayerHP : MonoBehaviour
         _playerController.enabled = false;
 
         _soundtrack.SetActive(false);
-        _menuSoundtrack.SetActive(true);
+
     }
 }
 

@@ -21,7 +21,6 @@ public class Bullet : MonoBehaviour
 	{
 		_renderer = GetComponent<SpriteRenderer>();
         _rigidbody = GetComponent<Rigidbody2D>();
-
     }
 
 	// Start is called before the first frame update

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ public class EnemyPatrol : MonoBehaviour
 	private Animator _animator;
 	private Weapon _weapon;
 	private GameObject _shootingArea;
+	private GameObject _shootingAreaBehind;
     // Movement
     private Vector2 _movement;
 	private bool _facingRight;
@@ -27,6 +29,7 @@ public class EnemyPatrol : MonoBehaviour
 		_animator = GetComponent<Animator>();
 		_weapon = GetComponentInChildren<Weapon>();
         _shootingArea = GameObject.Find("ShootingArea");
+        _shootingAreaBehind = GameObject.Find("ShootingAreaBehind");
 
     }
 
@@ -83,7 +86,7 @@ public class EnemyPatrol : MonoBehaviour
 		}
 	}
 
-	private void Flip()
+    private void Flip()
 	{
 		_facingRight = !_facingRight;
 		float localScaleX = transform.localScale.x;
@@ -115,6 +118,7 @@ public class EnemyPatrol : MonoBehaviour
 	{
 		_isAttacking = false;
 		_shootingArea.SetActive(true);
+        _shootingAreaBehind.SetActive(true);
 
     }
 

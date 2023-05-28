@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 3158906994830461787}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -0.98277354, y: 1, z: 1.068}
+  m_LocalScale: {x: -1, y: 1, z: 1.068}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5529102475133907553}
@@ -153,7 +153,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &1369102826
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -200,7 +200,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   playerAware: 3
-  aimingTime: 0.3
+  aimingTime: 0.5
   shootingTime: 1.5
 --- !u!82 &-7610009112314362500
 AudioSource:
@@ -339,6 +339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6676142313604825836}
   - component: {fileID: 2506385097566246210}
+  - component: {fileID: 6437385790892589853}
   m_Layer: 9
   m_Name: ShootingAreaBehind
   m_TagString: Untagged
@@ -387,6 +388,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.15}
   m_EdgeRadius: 0
+--- !u!114 &6437385790892589853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7095431734946114166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6f78d1b618d8d46a1f4d52c0f328c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7948022479872115441
 GameObject:
   m_ObjectHideFlags: 0
